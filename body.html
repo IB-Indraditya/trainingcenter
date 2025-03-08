@@ -1,0 +1,64 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Carousel</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        .carousel-item {
+            height: 100vh;
+            background-color: #002147;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+        }
+        .carousel-item h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        .carousel-item p {
+            font-size: 1.2rem;
+        }
+        .btn-custom {
+            background-color: yellow;
+            color: black;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+            border: none;
+        }
+        .btn-custom:hover {
+            background-color: #ffcc00;
+        }
+    </style>
+</head>
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <h1>Why <span style="color: yellow;">SkillCircle?</span></h1>
+                <p>Learn Data Science and unlock new opportunities</p>
+                <button class="btn-custom">Book Free Demo</button>
+            </div>
+            <div class="carousel-item">
+                <h1>Join <span style="color: yellow;">Our Courses</span></h1>
+                <p>Get trained by industry experts and build your future</p>
+                <button class="btn-custom">Enroll Now</button>
+            </div>
+            <div class="carousel-item">
+                <h1>Become <span style="color: yellow;">Job Ready</span></h1>
+                <p>Learn high-demand skills and get placed in top companies</p>
+                <button class="btn-custom">Start Learning</button>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
