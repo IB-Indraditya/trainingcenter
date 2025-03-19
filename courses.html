@@ -1,0 +1,427 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+        <style>
+        /* Fullscreen Carousel */
+        .carousel-item {
+            height: 100vh; /* Full screen height */
+            max-height: 610px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* Overlay for readability */
+        .carousel-item::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+        }
+
+        /* Text and Buttons on top of overlay */
+        .carousel-caption {
+            position: absolute;
+            top: 50%;
+            left: 50% !important;
+            right: 50% !important;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 2;
+            width: 80%;
+        }
+
+        /* Heading Styling */
+        .carousel-item h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        /* Paragraph Styling */
+        .carousel-item p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Custom Button */
+        .btn-custom {
+            background-color: yellow;
+            color: black;
+            font-weight: bold;
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 10px;
+            border: none;
+            font-size: 18px;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .btn-custom:hover {
+            background-color: #ffcc00 !important;
+        }
+
+        /* Adjust margin for text position */
+        .mt-7 {
+            margin-top: 7rem;
+        }
+
+        /* Background images for slides */
+        .carousel-item:nth-child(1) {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFYqoKTu_o3Zns2yExbst2Co84Gpc2Q1RJbA&s'); /* Replace with actual image URL */
+        }
+
+        .carousel-item:nth-child(2) {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw2UBIEIURI3WkMymj30bt25Eboy5mIiCnCA&s'); /* Replace with actual image URL */
+        }
+
+        .carousel-item:nth-child(3) {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw2UBIEIURI3WkMymj30bt25Eboy5mIiCnCA&s'); /* Replace with actual image URL */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .carousel-item h1 {
+                font-size: 2.2rem;
+            }
+
+            .carousel-item p {
+                font-size: 1rem;
+            }
+
+            .btn-custom {
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+        }
+        .imgbox img{
+            width: 100%;
+            height: 100%;
+        }
+        .video-card {
+            position: relative;
+            background: #FFC107;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .video-card img {
+            width: 100%;
+            border-radius: 10px;
+            height: 350px;
+            object-fit: cover;
+        }
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 50px;
+            color: white;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+            padding: 15px;
+            cursor: pointer;
+        }
+        .play-button:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        .name-badge {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        .alumni-card {
+        background: #0C2340;
+        color: white;
+        text-align: center;
+        border-radius: 15px;
+        overflow: hidden;
+        padding: 20px;
+        height: 350px; /* Fixed height to prevent stacking */
+    }
+    .bottom-section {
+        background: #FFC107;
+        padding: 15px;
+        color: black;
+        border-radius: 0 0 15px 15px;
+    }
+    .alumni-card img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
+        border: 3px solid white;
+    }
+    .company-logo {
+        max-width: 80px;
+        margin: 10px auto;
+    }
+    .section-heading {
+            text-align: center;
+            font-weight: bold;
+            color: #0a2a53;
+            margin-bottom: 30px;
+        }
+        .category-title {
+            background-color: #0a2a53;
+            color: #ffcc00;
+            text-align: center;
+            font-weight: bold;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+        .list-item {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        </style>
+    </head>
+    <body>
+        <section class="minscreen">
+            <header id="theader"></header>
+            <section class="mt-5 mb-3 h-50" style="background: url('https://cdn.careeronestop.org/OccVids/Thumbnails/education-and-training-overview.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
+                <div class="py-4 my-5" style="justify-content: center; align-items: center;">
+                    <h2 class="fw-bold text-center text-light mt-4">Our courses</h2>
+                </div>
+            </section>
+            
+            <section class="minscreen">
+                <section class="container py-5 text-center">
+                    <h2 class="fw-bold">Our Courses</h2>
+                    <p class="text-muted">Time To Skill Up</p>
+            
+                    <div class="row g-4">
+                        <!-- Course 1 -->
+                        <div class="col-md-4">
+                            <div class="card shadow p-3">
+                                <img src="https://nexabytetechnology.com/wp-content/uploads/2023/11/Digital-Marketing-Nexabyte-Technology-1024x683.jpg" class="card-img-top" alt="Course 1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Domain Flipping</h5>
+                                    <ul class="list-unstyled p-3" style="text-align: left;">
+                                        <li>✅ Duration: 10 Hours</li>
+                                        <li>✅ Total Lectures - 5</li>
+                                        <li>✅ Certification: Yes</li>
+                                    </ul>
+                                    <div class="d-flex justify-content-center">
+                                        <button class="btn btn-dark w-50 mx-2 rounded-1">📥 Syllabus</button>
+                                        <button class="btn btn-warning w-50 mx-2 rounded-1">View Course</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Course 2 -->
+                        <div class="col-md-4">
+                            <div class="card shadow p-3">
+                                <img src="https://nexabytetechnology.com/wp-content/uploads/2023/11/Digital-Marketing-Nexabyte-Technology-1024x683.jpg" class="card-img-top" alt="Course 2">
+                                <div class="card-body">
+                                    <h5 class="card-title">Performance Marketing</h5>
+                                    <ul class="list-unstyled p-3" style="text-align: left;">
+                                        <li>✅ Duration: 15 Hours</li>
+                                        <li>✅ Total Lectures - 8</li>
+                                        <li>✅ Certification: Yes</li>
+                                    </ul>
+                                    <div class="d-flex justify-content-center">
+                                        <button class="btn btn-dark w-50 mx-2 rounded-1">📥 Syllabus</button>
+                                        <button class="btn btn-warning w-50 mx-2 rounded-1">View Course</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Course 3 -->
+                        <div class="col-md-4">
+                            <div class="card shadow p-3">
+                                <img src="https://nexabytetechnology.com/wp-content/uploads/2023/11/Digital-Marketing-Nexabyte-Technology-1024x683.jpg" class="card-img-top" alt="Course 3">
+                                <div class="card-body">
+                                    <h5 class="card-title">LinkedIn Growth Hack</h5>
+                                    <ul class="list-unstyled p-3" style="text-align: left;">
+                                        <li>✅ Duration: 10 Hours</li>
+                                        <li>✅ Total Lectures - 5</li>
+                                        <li>✅ Certification: Yes</li>
+                                    </ul>
+                                    <div class="d-flex justify-content-center">
+                                        <button class="btn btn-dark w-50 mx-2 rounded-1">📥 Syllabus</button>
+                                        <button class="btn btn-warning w-50 mx-2 rounded-1">View Course</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card shadow p-3">
+                                <img src="https://nexabytetechnology.com/wp-content/uploads/2023/11/Digital-Marketing-Nexabyte-Technology-1024x683.jpg" class="card-img-top" alt="Course 3">
+                                <div class="card-body">
+                                    <h5 class="card-title">LinkedIn Growth Hack</h5>
+                                    <ul class="list-unstyled p-3" style="text-align: left;">
+                                        <li>✅ Duration: 10 Hours</li>
+                                        <li>✅ Total Lectures - 5</li>
+                                        <li>✅ Certification: Yes</li>
+                                    </ul>
+                                    <div class="d-flex justify-content-center">
+                                        <button class="btn btn-dark w-50 mx-2 rounded-1">📥 Syllabus</button>
+                                        <button class="btn btn-warning w-50 mx-2 rounded-1">View Course</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card shadow p-3">
+                                <img src="https://nexabytetechnology.com/wp-content/uploads/2023/11/Digital-Marketing-Nexabyte-Technology-1024x683.jpg" class="card-img-top" alt="Course 3">
+                                <div class="card-body">
+                                    <h5 class="card-title">LinkedIn Growth Hack</h5>
+                                    <ul class="list-unstyled p-3" style="text-align: left;">
+                                        <li>✅ Duration: 10 Hours</li>
+                                        <li>✅ Total Lectures - 5</li>
+                                        <li>✅ Certification: Yes</li>
+                                    </ul>
+                                    <div class="d-flex justify-content-center">
+                                        <button class="btn btn-dark w-50 mx-2 rounded-1">📥 Syllabus</button>
+                                        <button class="btn btn-warning w-50 mx-2 rounded-1">View Course</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card shadow p-3">
+                                <img src="https://nexabytetechnology.com/wp-content/uploads/2023/11/Digital-Marketing-Nexabyte-Technology-1024x683.jpg" class="card-img-top" alt="Course 3">
+                                <div class="card-body">
+                                    <h5 class="card-title">LinkedIn Growth Hack</h5>
+                                    <ul class="list-unstyled p-3" style="text-align: left;">
+                                        <li>✅ Duration: 10 Hours</li>
+                                        <li>✅ Total Lectures - 5</li>
+                                        <li>✅ Certification: Yes</li>
+                                    </ul>
+                                    <div class="d-flex justify-content-center">
+                                        <button class="btn btn-dark w-50 mx-2 rounded-1">📥 Syllabus</button>
+                                        <button class="btn btn-warning w-50 mx-2 rounded-1">View Course</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <div class="container py-5">
+                <h2 class="section-heading">Why Choose SkillCircle?</h2>
+            
+                <div class="row">
+                    <!-- Left Column -->
+                    <div class="col-md-6">
+                        <div class="category-title">FOR ENTREPRENEURS & BUSINESS OWNERS</div>
+                        <ul class="list-unstyled">
+                            <li class="list-item">Free guidance to budding entrepreneurs for raising money for their startup through angel investors via our sister company DelhiAngles.org</li>
+                            <li class="list-item">Most advanced course content focuses on practical learning with a focus on growing your business online.</li>
+                            <li class="list-item">Exposure through campaigns and real money spent while studying.</li>
+                            <li class="list-item">Mentorship for your startup/business idea from the founders themselves.</li>
+                        </ul>
+                    </div>
+            
+                    <!-- Right Column -->
+                    <div class="col-md-6">
+                        <div class="category-title">FOR FREELANCERS & JOB SEEKERS</div>
+                        <ul class="list-unstyled">
+                            <li class="list-item">100% Internship and work experience with our partner digital agency Ahujamedia.com</li>
+                            <li class="list-item">Access to placement support and chance to work with companies like Oyo, Cashkaro, Zomato, etc.</li>
+                            <li class="list-item">Make passive income during the course with our freelancing training.</li>
+                            <li class="list-item">Certification from SEMRUSH, Google, Facebook, Hubspot, and more than 20 international certifications.</li>
+                        </ul>
+                    </div>
+                </div>
+            
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="category-title">FOR STUDENTS</div>
+                        <ul class="list-unstyled">
+                            <li class="list-item">Trusted Certified Trainers who are experts in their field.</li>
+                            <li class="list-item">Case studies, Capstone projects, and Agency-style training experience.</li>
+                            <li class="list-item">Build your website during training itself and practice all learning on your website.</li>
+                            <li class="list-item">Joint Certification from DelhiStartups, registered under MSME, Govt. of India.</li>
+                            <li class="list-item">Most advanced course content with a focus on practical learning.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Include jQuery and Owl Carousel JS -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+            
+            <footer id="tfooter"></footer>
+        </section>
+    </body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".top-carousel").owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: false,
+            autoplay: true,
+            autoplayTimeout: 2000,
+            autoplayHoverPause: true,
+            autoplaySpeed: 1000,
+            items: 6,
+            rtl: false  // Left to right
+        });
+
+        $(".bottom-carousel").owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: false,
+            autoplay: true,
+            autoplayTimeout: 2000,
+            autoplayHoverPause: true,
+            autoplaySpeed: 1000,
+            items: 6,
+            rtl: true  // Right to left
+        });
+    });
+</script>
+<script>
+    $(document).ready(function(){
+        $(".owl-carousel").owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: false,
+            dots: true,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true,
+            responsive: {
+                0: { items: 1 },
+                768: { items: 2 },
+                1024: { items: 3 }
+            }
+        });
+    });
+</script>
+<script src="dynamic.js"></script>
+<script>
+    loadHTML('header.html', 'theader');
+    loadHTML('body.html', 'tbody');
+    loadHTML('footer.html', 'tfooter');
+</script>

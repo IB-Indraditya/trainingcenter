@@ -1,0 +1,378 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+        <style>
+        /* Fullscreen Carousel */
+        .carousel-item {
+            height: 100vh; /* Full screen height */
+            max-height: 610px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* Overlay for readability */
+        .carousel-item::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+        }
+
+        /* Text and Buttons on top of overlay */
+        .carousel-caption {
+            position: absolute;
+            top: 50%;
+            left: 50% !important;
+            right: 50% !important;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 2;
+            width: 80%;
+        }
+
+        /* Heading Styling */
+        .carousel-item h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        /* Paragraph Styling */
+        .carousel-item p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Custom Button */
+        .btn-custom {
+            background-color: yellow;
+            color: black;
+            font-weight: bold;
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 10px;
+            border: none;
+            font-size: 18px;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .btn-custom:hover {
+            background-color: #ffcc00 !important;
+        }
+
+        /* Adjust margin for text position */
+        .mt-7 {
+            margin-top: 7rem;
+        }
+
+        /* Background images for slides */
+        .carousel-item:nth-child(1) {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFYqoKTu_o3Zns2yExbst2Co84Gpc2Q1RJbA&s'); /* Replace with actual image URL */
+        }
+
+        .carousel-item:nth-child(2) {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw2UBIEIURI3WkMymj30bt25Eboy5mIiCnCA&s'); /* Replace with actual image URL */
+        }
+
+        .carousel-item:nth-child(3) {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw2UBIEIURI3WkMymj30bt25Eboy5mIiCnCA&s'); /* Replace with actual image URL */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .carousel-item h1 {
+                font-size: 2.2rem;
+            }
+
+            .carousel-item p {
+                font-size: 1rem;
+            }
+
+            .btn-custom {
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+        }
+        .imgbox img{
+            width: 100%;
+            height: 100%;
+        }
+        .video-card {
+            position: relative;
+            background: #FFC107;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .video-card img {
+            width: 100%;
+            border-radius: 10px;
+            height: 350px;
+            object-fit: cover;
+        }
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 50px;
+            color: white;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+            padding: 15px;
+            cursor: pointer;
+        }
+        .play-button:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        .name-badge {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        .alumni-card {
+        background: #0C2340;
+        color: white;
+        text-align: center;
+        border-radius: 15px;
+        overflow: hidden;
+        padding: 20px;
+        height: 350px; /* Fixed height to prevent stacking */
+    }
+    .bottom-section {
+        background: #FFC107;
+        padding: 15px;
+        color: black;
+        border-radius: 0 0 15px 15px;
+    }
+    .alumni-card img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
+        border: 3px solid white;
+    }
+    .company-logo {
+        max-width: 80px;
+        margin: 10px auto;
+    }
+    .section-heading {
+            text-align: center;
+            font-weight: bold;
+            color: #0a2a53;
+            margin-bottom: 30px;
+        }
+        .category-title {
+            background-color: #0a2a53;
+            color: #ffcc00;
+            text-align: center;
+            font-weight: bold;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+        .list-item {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        .blog-section {
+            background-color: #0a2a53;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .blog-heading {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #0a2a53;
+        }
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        .card img {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-radius: 5px;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-body {
+            padding: 15px;
+        }
+        .card-text {
+            font-size: 14px;
+            color: #666;
+        }
+        .blog-date {
+            font-size: 14px;
+            color: #888;
+            display: flex;
+            align-items: center;
+        }
+        .blog-date i {
+            margin-right: 5px;
+        }
+
+        </style>
+    </head>
+    <body>
+        <section class="minscreen">
+            <header id="theader"></header>
+            <section class="mt-5 mb-3 py-2 bg-dark" style="background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
+                <div class="py-2 my-5" style="justify-content: center; align-items: center;">
+                    <h2 class="fw-bold text-center text-light mt-4">Our courses</h2>
+                </div>
+            </section>
+            <!-- Blog Content -->
+            <div class="container my-5">
+                <h4 class="blog-heading">Blogs with Latest Information</h4>
+                
+                <div class="row">
+                    <!-- Blog Card 1 -->
+                    <div class="col-md-4 my-2">
+                        <div class="card">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMycu6Q-LMVqUwJbcg5DL1-q6-Np4O-WeZ6g&s" alt="BOAT Marketing Strategy">
+                            <div class="card-body">
+                                <p class="blog-date"><i class="bi bi-calendar"></i> March 18, 2025</p>
+                                <h5 class="card-title">BOAT Marketing Strategy: Driving Success Through Innovation</h5>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Blog Card 2 -->
+                    <div class="col-md-4 my-2">
+                        <div class="card">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMycu6Q-LMVqUwJbcg5DL1-q6-Np4O-WeZ6g&s" alt="Dabur Marketing Strategy">
+                            <div class="card-body">
+                                <p class="blog-date"><i class="bi bi-calendar"></i> March 15, 2025</p>
+                                <h5 class="card-title">Marketing Strategy of Dabur 2025: Old is Gold</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 my-2">
+                        <div class="card">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMycu6Q-LMVqUwJbcg5DL1-q6-Np4O-WeZ6g&s" alt="Dabur Marketing Strategy">
+                            <div class="card-body">
+                                <p class="blog-date"><i class="bi bi-calendar"></i> March 15, 2025</p>
+                                <h5 class="card-title">Marketing Strategy of Dabur 2025: Old is Gold</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 my-2">
+                        <div class="card">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMycu6Q-LMVqUwJbcg5DL1-q6-Np4O-WeZ6g&s" alt="Dabur Marketing Strategy">
+                            <div class="card-body">
+                                <p class="blog-date"><i class="bi bi-calendar"></i> March 15, 2025</p>
+                                <h5 class="card-title">Marketing Strategy of Dabur 2025: Old is Gold</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 my-2">
+                        <div class="card">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMycu6Q-LMVqUwJbcg5DL1-q6-Np4O-WeZ6g&s" alt="Dabur Marketing Strategy">
+                            <div class="card-body">
+                                <p class="blog-date"><i class="bi bi-calendar"></i> March 15, 2025</p>
+                                <h5 class="card-title">Marketing Strategy of Dabur 2025: Old is Gold</h5>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Blog Card 3 -->
+                    <div class="col-md-4 my-2">
+                        <div class="card">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMycu6Q-LMVqUwJbcg5DL1-q6-Np4O-WeZ6g&s" alt="Airtel Marketing Strategy">
+                            <div class="card-body">
+                                <p class="blog-date"><i class="bi bi-calendar"></i> March 11, 2025</p>
+                                <h5 class="card-title">Airtel Marketing Strategy 2025: Mastering the Market Game</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Include jQuery and Owl Carousel JS -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+            
+            <footer id="tfooter"></footer>
+        </section>
+    </body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".top-carousel").owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: false,
+            autoplay: true,
+            autoplayTimeout: 2000,
+            autoplayHoverPause: true,
+            autoplaySpeed: 1000,
+            items: 6,
+            rtl: false  // Left to right
+        });
+
+        $(".bottom-carousel").owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: false,
+            autoplay: true,
+            autoplayTimeout: 2000,
+            autoplayHoverPause: true,
+            autoplaySpeed: 1000,
+            items: 6,
+            rtl: true  // Right to left
+        });
+    });
+</script>
+<script>
+    $(document).ready(function(){
+        $(".owl-carousel").owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: false,
+            dots: true,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true,
+            responsive: {
+                0: { items: 1 },
+                768: { items: 2 },
+                1024: { items: 3 }
+            }
+        });
+    });
+</script>
+<script src="dynamic.js"></script>
+<script>
+    loadHTML('header.html', 'theader');
+    loadHTML('body.html', 'tbody');
+    loadHTML('footer.html', 'tfooter');
+</script>
